@@ -13,4 +13,4 @@ let pokemonList = [{
     height: 2,
     type: ['grass', 'poison']
   }]
-
+  
