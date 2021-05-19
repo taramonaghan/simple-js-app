@@ -1,4 +1,6 @@
-let pokemonList = [
+//added IIFE
+let pokemonRepository = (function () {
+  let pokemonList = [
   {
     name: "Bulbasaur", 
     height: 0.7, 
@@ -16,10 +18,24 @@ let pokemonList = [
   }
 ];
 
-function myPokemonList(pokemon) {
-    console.log('name:' + pokemon.name + ' height:' + pokemon.height + ' type:' + pokemon.type);
+function getAll() {
+  return pokemonList;
 }
-pokemonList.forEach(myPokemonList); 
+
+function add(pokemon) {
+    pokemonList.push(pokemon);
+}
+
+return {
+    getAll: getAll,
+    add: add
+};
+})();
+
+//added forEach loop to call pokemonlist
+pokemonRepository.getAll().forEach(function(pokemon) {
+    document.write(pokemon.name + ' height: ' + pokemon.height + ' type: ' + pokemon.type);
+});
 
 
 
