@@ -1,4 +1,5 @@
-let pokemonList = [{
+let pokemonList = [
+  {
     name: "Bulbasaur", 
     height: 0.7, 
     type: ['grass', 'poison']
@@ -12,12 +13,14 @@ let pokemonList = [{
     name: "Vensaur",
     height: 2,
     type: ['grass', 'poison']
-  }];
+  }
+];
 
-
-pokemonList.forEach (function(pokemon) {
+function myPokemonList(pokemon) {
     console.log(pokemon.name + pokemon.height + pokemon.type);
-});
+}
+pokemonList.forEach(myPokemonList); 
+
 
 
 
