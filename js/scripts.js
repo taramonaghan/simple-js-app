@@ -12,13 +12,12 @@ let pokemonList = [{
     name: "Vensaur",
     height: 2,
     type: ['grass', 'poison']
-  }]
+  }];
+
 
 pokemonList.forEach (function(pokemon) {
     console.log(pokemon.name + pokemon.height + pokemon.type);
 });
-
-
 
 
 
