@@ -34,8 +34,10 @@ function addListItem(pokemon){
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     //event listener for button 
-    button.addEventListener('click', showDetails(pokemon));
-};
+    button.addEventListener('click', function () {showDetails(pokemon);
+});
+}
+
 function showDetails(pokemon){
     console.log(pokemon);
 };
@@ -52,8 +54,3 @@ return {
 pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
 });
-   
-
-
-
-
