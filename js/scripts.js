@@ -42,14 +42,14 @@ let pokemonRepository = (function () {
 
     }
     //fetches details of pokemon
-    function loadDetails(pokemon) {
-        let url = pokemon.detailsUrl;
+    function loadDetails(item) {
+        let url = item.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (details) {
-            pokemon.imageUrl = details.sprites.front_default;
-            pokemon.height = details.height;
-            pokemon.types = details.types;
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
         }).catch(function (e) {
             console.error(e);
         });
@@ -59,8 +59,10 @@ let pokemonRepository = (function () {
         showModal(pokemon);
         });
     }
-    //open modal
+    //modal
     function showModal(pokemon){
+        let modalContainer = document.querySelector('#modal-contianer');
+        
         modalContainer.innerHTML = '';
 
         let modal = document.createElement('div');
@@ -75,7 +77,7 @@ let pokemonRepository = (function () {
         titleElement.innerText = pokemon.name;
 
         let heightElement = document.createElement('p');
-        heightElement.innerText = pokemon.height;
+        heightElement.innerText = ' Height ' + pokemon.height;
 
         let imageElement = document.createElement('img');
         imageElement.src = pokemon.imageUrl;
@@ -86,8 +88,13 @@ let pokemonRepository = (function () {
         modal.appendChild(heightElement);
         modal.appendChild(imageElement);
         modalContainer.appendChild(modal);
+
         modalContainer.classList.add('is-visible');
-    }
+    };
+    document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal('Modal title', 'This is the modal content!');
+    });
+
     //hides modal function
     function hideModal(){
         modalContainer.classList.remove('is-visible');
@@ -110,7 +117,6 @@ let pokemonRepository = (function () {
         getAll: getAll,
         add: add,
         addListItem: addListItem,
-        showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails
     };
