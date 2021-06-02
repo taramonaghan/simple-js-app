@@ -62,7 +62,6 @@ let pokemonRepository = (function () {
     //modal
     function showModal(pokemon){
         let modalContainer = document.querySelector('#modal-container');
-        
         modalContainer.innerHTML = '';
 
         let modal = document.createElement('div');
@@ -91,6 +90,7 @@ let pokemonRepository = (function () {
 
         modalContainer.classList.add('is-visible');
     };
+
     document.querySelector('#show-modal').addEventListener('click', () => {
         showModal('Modal title', 'This is the modal content!');
     });
@@ -118,7 +118,7 @@ let pokemonRepository = (function () {
         add: add,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
     };
 })();
 
