@@ -16,7 +16,7 @@ let pokemonRepository = (function () {
         listPokemon.classList.add('list-group' , 'list-group-item');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('btn , btn-primary');
+        button.classList.add('btn' , 'btn-primary');
         button.setAttribute('data-target', '#exampleModal', 'modal', 'data-toggle');
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
